@@ -6,9 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library App</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>When In Doubt, Go To The Library</h1>
+    <form id="bookForm">
+        <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder ="Title" required>
+        <label for="author">Author</label>
+            <input type="text" id="author" name="author" placeholder="Author" required>
+        <label for="pages">Pages</label>
+            <input type="number" id="pages" name="pages" placeholder="Pages" max="10000" required>    
+        <label for="read">Have you read this book?</label>
+            <input type="Checkbox" id="read" name="read">
+        <button type="submit" id="submit" name="submit"> Add to Library</button>
+    </form>
 </body>
+<script src="script.js"></script>
 </html>
