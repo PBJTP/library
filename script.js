@@ -1,34 +1,11 @@
 let myLibrary = [];
 
-// Factory Function way
-
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
 };
-
-// Class way
-
-// class Book {
-//     constructor(title, author, pages, read) {
-//         this.title = title;
-//         this.author = author;
-//         this.pages = pages;
-//         this.read = read;
-//     }
-// }
-
-// Moved to Ternary within addBookToLibrary function
-
-// function isChecked() {
-//     if (document.getElementById('read').checked) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
 
 
 

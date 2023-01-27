@@ -1,3 +1,37 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+@font-face {
+    font-family: "myFont";
+    src: url("Aboreto-Regular.ttf");
+}
+
+.shadow {
+    background-color: rgb(0 0 0 / 0.6);
+    width: 70vw;
+    height: 100vh;
+}
+
 h1 {
-    color: rebeccapurple;
+    color: rgb(225, 225, 225);
+    padding: 20px;
+    margin: 0;
+    font-family: 'myFont', serif;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+#bgimage {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./library-image.jpg');
 }
