@@ -17,7 +17,7 @@
 // remove book from array based on index/value
 
 let myLibrary = [];
-let addBtn = document.getElementById('bookForm');
+const addBtn = document.getElementById('bookForm');
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -26,19 +26,44 @@ function Book(title, author, pages, read) {
     this.read = read;
 };
 
+//add book listener and modal pop up
+document.getElementById('addBook').addEventListener('click', () => {
+    document.querySelector('.formWrapper').classList.add('active');
+});
+
+
 function addBookToLibrary(event) {
-    title = document.getElementById('title').value;
-    author = document.getElementById('author').value;
-    pages = document.getElementById('pages').value;
-    read = document.getElementById('read').checked ? true : false;
-    myLibrary.push(new Book(title, author, pages, read));
+    //get form data and make object
+    const formData = new FormData(addBtn);
+    const data = Object.fromEntries(formData);
+
+    //assign boolean to read status
+    data.read = document.getElementById('read').checked ? true : false;
+    //create book and push to myLibrary array
+    myLibrary.push(new Book(
+        data.title,
+        data.author,
+        data.pages,
+        data.read,
+        ));
+    //form controls
     document.getElementById('bookForm').reset();
     event.preventDefault();
     document.querySelector('.formWrapper').classList.remove('active');
 };
 
+
 addBtn.addEventListener('submit', addBookToLibrary);
 
-document.getElementById('addBook').addEventListener('click', () => {
-    document.querySelector('.formWrapper').classList.add('active');
-});
+
+const cardUpdate = () => {
+    //create elements and add classes
+    const container = document.querySelector('.cardContainer');
+    const card = document.createElement('div');
+    const ul = document.createElement('ul');
+    card.classList.add('card');
+    container.appendChild(card);
+
+};
+
+cardUpdate();
