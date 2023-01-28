@@ -1,8 +1,5 @@
 let myLibrary = [];
-document.getElementById('addBook').addEventListener('click', () => {
-    console.log('something')
-    document.getElementById('bookForm').classList.add('active');
-});
+let addBtn = document.getElementById('bookForm');
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -19,8 +16,11 @@ function addBookToLibrary(event) {
     myLibrary.push(new Book(title, author, pages, read));
     document.getElementById('bookForm').reset();
     event.preventDefault();
-}
+    document.querySelector('.formWrapper').classList.remove('active');
+};
 
-// let addBtn = document.getElementById('bookForm');
+addBtn.addEventListener('submit', addBookToLibrary);
 
-// addBtn.addEventListener('submit', addBookToLibrary);
+document.getElementById('addBook').addEventListener('click', () => {
+    document.querySelector('.formWrapper').classList.add('active');
+});
