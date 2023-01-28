@@ -20,14 +20,24 @@ body {
     background-image: url('./library-image.jpg');
 }
 
+.btnContainer {
+    display: flex;
+    justify-content: center;
+}
+
 #addBook {
     font-family: 'myFont';
+    border-radius: 5px;
+    height: 2em;
+    width: auto;
+    margin: auto;
+    background-color: rgb(225, 225, 225);
 }
 
 .shadow {
     background-color: rgb(0 0 0 / 0.6);
     width: 70vw;
-    height: 95vh;
+    height: 100%;
     max-width: 1200px;
     margin: 0;
 }
@@ -44,10 +54,10 @@ h1 {
 h2 {
     text-align: center;
     color: rgb(225, 225, 225);
-    padding-bottom: 20px;
+    padding-bottom: 2.5em;
     margin: 0;
     font-weight: 700;
-    font-size: 1em;
+    font-size: .8em;
 }
 
 .cardContainer {
@@ -69,4 +79,8 @@ h2 {
     justify-self: center;
     align-self: center;
     box-shadow:rgb(121, 120, 120) 3px 3px 15px;
+}
+
+form {
+    display: none;
 }
