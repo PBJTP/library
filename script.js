@@ -1,4 +1,8 @@
 let myLibrary = [];
+document.getElementById('addBook').addEventListener('click', () => {
+    console.log('something')
+    document.getElementById('bookForm').classList.add('active');
+});
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -6,8 +10,6 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 };
-
-
 
 function addBookToLibrary(event) {
     title = document.getElementById('title').value;
@@ -19,6 +21,6 @@ function addBookToLibrary(event) {
     event.preventDefault();
 }
 
-let addBtn = document.getElementById('bookForm');
+// let addBtn = document.getElementById('bookForm');
 
-addBtn.addEventListener('submit', addBookToLibrary);
+// addBtn.addEventListener('submit', addBookToLibrary);
