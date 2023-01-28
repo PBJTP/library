@@ -38,8 +38,9 @@ body {
 button {
     font-family: 'myFont';
     border-radius: 5px;
-    height: 2em;
-    width: auto;
+    height: 2vh;
+    width: 20vw;
+    min-width: 220px;
     margin: auto;
     background-color: rgb(225, 225, 225);
 }
@@ -109,16 +110,16 @@ h2 {
     padding: 0;
 }
 
+.card li {
+    font-size: 2vh;
+    text-align: center;
+    padding: 0.8em;
+}
+
 .card .line {
     height: 1px;
     width: 80%;
     background-color:rgb(225, 225, 225);
-}
-
-.card li {
-    font-size: 1.5em;
-    text-align: center;
-    padding: 0.8em;
 }
 
 .card .readStatus,
@@ -160,6 +161,7 @@ input {
     position: fixed;
     height: auto;
     width: auto;
+    max-width: 50vw;
     background-color: rgba(39, 39, 39, 0.9);
     border-radius: 20px;
     border: solid black 3px;
