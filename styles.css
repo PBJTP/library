@@ -1,7 +1,14 @@
+@font-face {
+    font-family: "myFont";
+    src: url("Aboreto-Regular.ttf");
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
+    font-family: 'myFont', serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -13,9 +20,8 @@ body {
     background-image: url('./library-image.jpg');
 }
 
-@font-face {
-    font-family: "myFont";
-    src: url("Aboreto-Regular.ttf");
+#addBook {
+    font-family: 'myFont';
 }
 
 .shadow {
@@ -29,24 +35,38 @@ body {
 h1 {
     text-align: center;
     color: rgb(225, 225, 225);
-    padding: 40px;
+    padding: 40px 40px 10px 40px;
     margin: 0;
-    font-family: 'myFont', serif;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 3em;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(225, 225, 225);
+    padding-bottom: 20px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1em;
 }
 
 .cardContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+    align-content: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .card {
-    height: 15vh;
-    width: 15vh;
+    height: 15em;
+    width: 15em;
     min-height: 200px;
     min-width: 200px;
-    background-color: white;
-    margin: 30px;
+    background-color: rgb(0 0 0 / 0.8);
     border-radius: 20px;
+    justify-self: center;
+    align-self: center;
+    box-shadow:rgb(121, 120, 120) 3px 3px 15px;
 }
