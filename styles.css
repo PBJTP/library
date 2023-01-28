@@ -5,9 +5,12 @@ body {
 }
 
 body {
-    display: grid;
+    display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./library-image.jpg');
 }
 
 @font-face {
@@ -18,20 +21,32 @@ body {
 .shadow {
     background-color: rgb(0 0 0 / 0.6);
     width: 70vw;
-    height: 100vh;
+    height: 95vh;
+    max-width: 1200px;
+    margin: 0;
 }
 
 h1 {
+    text-align: center;
     color: rgb(225, 225, 225);
-    padding: 20px;
+    padding: 40px;
     margin: 0;
     font-family: 'myFont', serif;
     font-weight: bold;
     font-size: 3em;
 }
 
-#bgimage {
-    height: 100vh;
-    width: 100vw;
-    background-image: url('./library-image.jpg');
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+    height: 15vh;
+    width: 15vh;
+    min-height: 200px;
+    min-width: 200px;
+    background-color: white;
+    margin: 30px;
+    border-radius: 20px;
 }

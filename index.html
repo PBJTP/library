@@ -8,20 +8,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="bgimage">
-        <div class="shadow">
-        <h1>When In Doubt, Go To The Library</h1>
-            <form id="bookForm">
-                <label for="title">Title</label>
-                    <input type="text" id="title" name="title" placeholder ="Title" required>
-                <label for="author">Author</label>
-                    <input type="text" id="author" name="author" placeholder="Author" required>
-                <label for="pages">Pages</label>
-                    <input type="number" id="pages" name="pages" placeholder="Pages" max="10000" required>    
-                <label for="read">Have you read this book?</label>
-                    <input type="Checkbox" id="read" name="read">
-                <button type="submit" id="submit" name="submit"> Add to Library</button>
-            </form>
+    <div class="shadow">
+    <h1>When In Doubt, Go To The Library</h1>
+        <form id="bookForm">
+            <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder ="Title" required>
+            <label for="author">Author</label>
+                <input type="text" id="author" name="author" placeholder="Author" required>
+            <label for="pages">Pages</label>
+                <input type="number" id="pages" name="pages" placeholder="Pages" max="10000" required>    
+            <label for="read">Have you read this book?</label>
+                <input type="Checkbox" id="read" name="read">
+            <button type="submit" id="submit" name="submit"> Add to Library</button>
+        </form>
+        <div class="cardContainer">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
         </div>
     </div>
 </body>
