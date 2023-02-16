@@ -18,10 +18,9 @@
 
 let myLibrary = [];
 const addBtn = document.getElementById('bookForm');
-const remove = document.querySelectorAll('.remove');
 const container = document.querySelector('.cardContainer');
 
-console.log(remove);
+
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -42,8 +41,8 @@ function addBookToLibrary(event) {
     const data = Object.fromEntries(formData);
     let id = myLibrary.length;
 
-    //assign boolean to read status
-    data.read = document.getElementById('read').checked ? true : false;
+    //assign read status
+    data.read = document.getElementById('read').checked ? 'Read' : 'Not Read Yet';
     //create book and push to myLibrary array
     myLibrary.push(new Book(
         data.title,
@@ -53,32 +52,31 @@ function addBookToLibrary(event) {
         ));
     displayBooks();
     //form controls
+    console.log(myLibrary);
     document.getElementById('bookForm').reset();
+    //prevent refresh on submit
     event.preventDefault();
     document.querySelector('.formWrapper').classList.remove('active');
-
 };
 
-
+//event listener for form
 addBtn.addEventListener('submit', addBookToLibrary);
 
+//loop through myLibrary and render to DOM, add additional button functionality
 const displayBooks = () => {
     container.innerHTML = "";
     for (i = 0; i < myLibrary.length; i++) {
         cardUpdate(i);
     };
-
+    deleteBook();
+    changeRead();
 };
 
+
 const cardUpdate = (id) => {
-    //create variables and new elements
 
     if (myLibrary.length === 0) {
         return;
-    } else if (myLibrary.indexOf(id) === true) {
-        myLibrary[id].read = 'Read';
-    } else {
-        myLibrary[id].read = 'Not Read';
     }
 
     // Add html to cardContainer
@@ -97,14 +95,29 @@ const cardUpdate = (id) => {
             </ul>
         </div>
     </div>`;
-    const removeBtn = document.querySelectorAll('.remove');
-    console.log(removeBtn);
-    removeBtn.forEach((item) => {
-        item.addEventListener('click', () => {
-            myLibrary.splice(item);
-            displayBooks();
-        });
-    });
-    
-
 };
+
+const deleteBook = () => {
+    const remove = Array.from(document.querySelectorAll('.remove'));
+    remove.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            myLibrary.splice(index,1);
+            displayBooks();
+        })
+    })
+};
+
+//change read status by clicking the word on the card
+const changeRead = () => {
+    const readStatus = Array.from(document.querySelectorAll('.readStatus'));
+    readStatus.forEach((div, index) => {
+        div.addEventListener('click', () => {
+            if (myLibrary[index].read == 'Read') {
+                myLibrary[index].read = 'Not Read Yet';
+            } else {
+                myLibrary[index].read = 'Read';
+            }
+            displayBooks();
+        })
+    })
+}
